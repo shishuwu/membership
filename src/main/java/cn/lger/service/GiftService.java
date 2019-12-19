@@ -5,7 +5,7 @@ import cn.lger.dao.GiftDao;
 import cn.lger.dao.MemberDao;
 import cn.lger.domain.ExchangeRecord;
 import cn.lger.domain.Gift;
-import cn.lger.domain.Member;
+import cn.lger.domain.Member2;
 import cn.lger.exception.GiftNumberNotEnoughException;
 import cn.lger.exception.IdNotFoundException;
 import cn.lger.exception.IntegralNotEnoughException;
@@ -56,7 +56,7 @@ public class GiftService {
 
     @Transactional
     public void integralExchange(String memberId, Integer giftId) {
-        Member member = memberDao.findMemberById(memberId);
+        Member2 member = memberDao.findMemberById(memberId);
         Gift gift = giftDao.findById(giftId).isPresent()?giftDao.findById(giftId).get():null;
 
         //确保存在两个id的实体

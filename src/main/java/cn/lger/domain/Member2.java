@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * Created by Pro on 2017-12-06.
  */
 @Entity
-public class Member {
+public class Member2 {
 
     @Id
     private String id;
@@ -135,7 +135,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Member{" +
+        return "Member2{" +
                 "id='" + id + '\'' +
                 ", iconPath='" + iconPath + '\'' +
                 ", memberName='" + memberName + '\'' +

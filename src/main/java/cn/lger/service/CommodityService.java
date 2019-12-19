@@ -4,7 +4,7 @@ import cn.lger.dao.CommodityDao;
 import cn.lger.dao.MemberDao;
 import cn.lger.dao.TransactionRecordDao;
 import cn.lger.domain.Commodity;
-import cn.lger.domain.Member;
+import cn.lger.domain.Member2;
 import cn.lger.domain.TransactionRecord;
 import cn.lger.exception.BalanceNotEnoughException;
 import cn.lger.exception.CommodityNumberNotEnoughException;
@@ -37,7 +37,7 @@ public class CommodityService {
 
     @Transactional
     public void purchaseCommodity(String memberId, String commodityId, boolean balance) {
-        Member member = memberDao.findMemberById(memberId);
+        Member2 member = memberDao.findMemberById(memberId);
         Commodity commodity = commodityDao.findCommodityById(commodityId);
         //确保存在两个id的实体
         if (member != null && commodity != null) {

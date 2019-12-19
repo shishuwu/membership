@@ -20,7 +20,7 @@ public class ExchangeRecord {
     @GenericGenerator(name="id",strategy="uuid")
     private String id;
     @ManyToOne
-    private Member member;
+    private Member2 member;
     @ManyToOne
     private Gift gift;
 
@@ -32,11 +32,11 @@ public class ExchangeRecord {
         this.id = id;
     }
 
-    public Member getMember() {
+    public Member2 getMember() {
         return member;
     }
 
-    public void setMember(Member member) {
+    public void setMember(Member2 member) {
         this.member = member;
     }
 

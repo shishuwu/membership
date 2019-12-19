@@ -1,10 +1,7 @@
 package cn.lger.web;
 
-import cn.lger.domain.Member;
+import cn.lger.domain.Member2;
 import cn.lger.domain.MemberGrade;
-import cn.lger.exception.IdNotFoundException;
-import cn.lger.exception.IntegralNotEnoughException;
-import cn.lger.service.GiftService;
 import cn.lger.service.MemberGradeService;
 import cn.lger.service.MemberService;
 import cn.lger.util.FileUploadUtil;
@@ -45,7 +42,7 @@ public class MemberController {
     }
 
     @PostMapping("/addMember")
-    public String addMember(Member member, String gradeName, MultipartFile icon, Map<String, Object> model) {
+    public String addMember(Member2 member, String gradeName, MultipartFile icon, Map<String, Object> model) {
         //处理上传文件
         try {
             if (icon == null)
@@ -90,7 +87,7 @@ public class MemberController {
 
     @PostMapping("/queryMember")
     @ResponseBody
-    public Page<Member> queryMember(Integer currentPage, String memberName) {
+    public Page<Member2> queryMember(Integer currentPage, String memberName) {
         if (memberName == null || memberName.trim().equals(""))
             return memberService.findMembers(currentPage);
         return memberService.findMembersByMemberName(currentPage, memberName);
@@ -149,7 +146,7 @@ public class MemberController {
 
     @PostMapping("/integralLottery")
     @ResponseBody
-    public Member integralLottery(Integer allIntegral) {
+    public Member2 integralLottery(Integer allIntegral) {
         if (allIntegral == null)
             return null;
         try {

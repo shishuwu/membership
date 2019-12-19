@@ -1,6 +1,6 @@
 package cn.lger.dao;
 
-import cn.lger.domain.Member;
+import cn.lger.domain.Member2;
 import cn.lger.domain.MemberGrade;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +31,7 @@ public class TestMemberDao {
      */
     @Test
     public void test01(){
-        Member member = new Member();
+        Member2 member = new Member2();
         member.setId("123123123");
         member.setBalance((float) 123.0);
         member.setSex("男");
@@ -50,7 +50,7 @@ public class TestMemberDao {
 
     @Test
     public void test02(){
-        Member member = memberDao.findMemberById("123123123");
+        Member2 member = memberDao.findMemberById("123123123");
         System.out.println(member);
     }
 
@@ -60,7 +60,7 @@ public class TestMemberDao {
     @Test
     public void test03(){
         Pageable pageable = new PageRequest(0, 3, Sort.Direction.ASC, "id");
-        Page<Member> page = memberDao.findAll(pageable);
+        Page<Member2> page = memberDao.findAll(pageable);
         System.out.println();
     }
 
@@ -83,15 +83,15 @@ public class TestMemberDao {
     @Test
     public void test07(){
         Pageable pageable = new PageRequest(0, 1);
-        Page<Member> page = memberDao.findAll(pageable);
+        Page<Member2> page = memberDao.findAll(pageable);
         PageImpl page1 = (PageImpl) page;
         System.out.println(page1.getContent().get(0));
     }
 
     @Test
     public void test08(){
-        List<Member> members = memberDao.findByBirthday(LocalDate.now());
-        for (Member m: members
+        List<Member2> members = memberDao.findByBirthday(LocalDate.now());
+        for (Member2 m: members
              ) {
             System.out.println(m);
         }

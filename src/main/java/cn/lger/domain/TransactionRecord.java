@@ -20,7 +20,7 @@ public class TransactionRecord {
     @GenericGenerator(name="id",strategy="uuid")
     private String id;
     @ManyToOne
-    private Member member;
+    private Member2 member;
     @ManyToOne
     private Commodity commodity;
 
@@ -32,11 +32,11 @@ public class TransactionRecord {
         this.id = id;
     }
 
-    public Member getMember() {
+    public Member2 getMember() {
         return member;
     }
 
-    public void setMember(Member member) {
+    public void setMember(Member2 member) {
         this.member = member;
     }
 
