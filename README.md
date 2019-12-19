@@ -3,6 +3,8 @@
 ## Tips
 - 当前项目的Java版本是1.8
     - 如Intellij，需在 Project里 设为1.8（如果不是的话）
+    
+- 注意：MySQL 在8.0.17版本时，把Member变为关键字了（8.0.19又退回了）
 
 ## TODO
 - SSL
