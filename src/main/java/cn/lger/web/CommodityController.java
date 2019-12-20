@@ -1,6 +1,7 @@
 package cn.lger.web;
 
 import cn.lger.domain.Commodity;
+import cn.lger.domain.Constant;
 import cn.lger.exception.BalanceNotEnoughException;
 import cn.lger.exception.CommodityNumberNotEnoughException;
 import cn.lger.exception.IdNotFoundException;
@@ -88,7 +89,7 @@ public class CommodityController {
         if (currentPage == null || currentPage < 0){
             currentPage = 0;
         }
-        Pageable pageable = new PageRequest(currentPage, 3);
+        Pageable pageable = new PageRequest(currentPage, Constant.PAGE_SIZE);
         return commodityService.findAll(pageable);
     }
 

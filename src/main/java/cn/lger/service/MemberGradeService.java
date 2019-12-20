@@ -1,6 +1,7 @@
 package cn.lger.service;
 
 import cn.lger.dao.MemberGradeDao;
+import cn.lger.domain.Constant;
 import cn.lger.domain.MemberGrade;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -31,7 +32,7 @@ public class MemberGradeService {
     }
 
     public Page<MemberGrade> findAll(Integer currentPage){
-        Pageable pageable = new PageRequest(currentPage, 5);
+        Pageable pageable = new PageRequest(currentPage, Constant.PAGE_SIZE);
         return memberGradeDao.findAll(pageable);
     }
 

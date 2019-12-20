@@ -3,6 +3,7 @@ package cn.lger.service;
 import cn.lger.dao.ExchangeRecordDao;
 import cn.lger.dao.GiftDao;
 import cn.lger.dao.MemberDao;
+import cn.lger.domain.Constant;
 import cn.lger.domain.ExchangeRecord;
 import cn.lger.domain.Gift;
 import cn.lger.domain.Member2;
@@ -42,7 +43,7 @@ public class GiftService {
         if (currentPage == null) {
             currentPage = 1;
         }
-        Pageable pageable = new PageRequest(currentPage, 3);
+        Pageable pageable = new PageRequest(currentPage, Constant.PAGE_SIZE);
         return giftDao.findAll(pageable);
     }
 
