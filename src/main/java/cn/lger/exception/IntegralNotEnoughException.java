@@ -7,7 +7,9 @@ package cn.lger.exception;
  */
 public class IntegralNotEnoughException extends RuntimeException{
 
-    public IntegralNotEnoughException(){
+    private static final long serialVersionUID = 1637143580895761575L;
+
+    public IntegralNotEnoughException() {
         super("账户积分不足");
     }
 

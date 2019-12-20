@@ -3,7 +3,6 @@ package cn.lger.security;
 import cn.lger.dao.AdminDao;
 import cn.lger.domain.Admin;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

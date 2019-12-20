@@ -7,7 +7,9 @@ package cn.lger.exception;
  */
 public class CommodityNumberNotEnoughException extends RuntimeException{
 
-    public CommodityNumberNotEnoughException(){
+    private static final long serialVersionUID = -4323342412344431001L;
+
+    public CommodityNumberNotEnoughException() {
         super("商品数量不足");
     }
 

@@ -1,10 +1,8 @@
 package cn.lger.service;
 
 import cn.lger.dao.ExchangeRecordDao;
-import cn.lger.dao.TransactionRecordDao;
 import cn.lger.domain.Constant;
 import cn.lger.domain.ExchangeRecord;
-import cn.lger.domain.TransactionRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

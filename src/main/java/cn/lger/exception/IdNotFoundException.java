@@ -7,7 +7,9 @@ package cn.lger.exception;
  */
 public class IdNotFoundException extends RuntimeException{
 
-    public IdNotFoundException(){
+    private static final long serialVersionUID = -8240726201427974843L;
+
+    public IdNotFoundException() {
         super("id找不到");
     }
 }
