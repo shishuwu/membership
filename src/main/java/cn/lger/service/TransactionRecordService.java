@@ -1,6 +1,7 @@
 package cn.lger.service;
 
 import cn.lger.dao.TransactionRecordDao;
+import cn.lger.domain.Constant;
 import cn.lger.domain.TransactionRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,12 +22,12 @@ public class TransactionRecordService {
     private TransactionRecordDao transactionRecordDao;
 
     public Page<TransactionRecord> findTransactionRecord(Integer currentPage){
-        Pageable pageable = PageRequest.of(currentPage, 3);
+        Pageable pageable = PageRequest.of(currentPage, Constant.PAGE_SIZE);
         return transactionRecordDao.findAll(pageable);
     }
 
     public Page<TransactionRecord> findTransactionRecordByMemberId(Integer currentPage, String memberId) {
-        Pageable pageable = PageRequest.of(currentPage, 3);
+        Pageable pageable = PageRequest.of(currentPage, Constant.PAGE_SIZE);
         return transactionRecordDao.findAllByMemberId(pageable, memberId);
     }
 }
