@@ -1,6 +1,7 @@
 package cn.lger.service;
 
 import cn.lger.dao.MemberDao;
+import cn.lger.domain.Constant;
 import cn.lger.domain.Member2;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class MemberService {
         if (currentPage == null){
             currentPage = 1;
         }
-        Pageable pageable = new PageRequest(currentPage, 3, Sort.Direction.ASC, "id");
+        Pageable pageable = new PageRequest(currentPage, Constant.PAGE_SIZE, Sort.Direction.ASC, "id");
         return memberDao.findAll(pageable);
     }
 
@@ -43,7 +44,7 @@ public class MemberService {
         if (currentPage == null){
             currentPage = 1;
         }
-        Pageable pageable = PageRequest.of(currentPage, 3, Sort.Direction.ASC, "id");
+        Pageable pageable = PageRequest.of(currentPage, Constant.PAGE_SIZE, Sort.Direction.ASC, "id");
         return memberDao.findAllByMemberName(memberName, pageable);
     }
 
