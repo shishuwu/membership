@@ -5,9 +5,6 @@ var totalPages = 1;
 //     dismissible: true
 // });
 
-
-
-
 function updateData(pageNum) {
     if (pageNum < 1 || pageNum > totalPages)
         return;
@@ -35,8 +32,10 @@ function updateData(pageNum) {
                         '<td>' + content.gradeName + '</td>' +
                         '<td>' + content.discount + '</td>' +
                         '<td>' + content.comment + '</td>' +
-                        '<td> <button class="waves-effect waves-light btn" data-toggle="modal" data-target="#myModal" onclick="openModelWindow(this)">修改</button> </td>' +    
-                        '<td> <button class="waves-effect waves-light btn" onclick="deleteMemberGrade(this, ' + content.id + ')">删除</button> </td>' + 
+                        '<td>' + 
+                        '<button class="waves-effect waves-light btn" data-toggle="modal" data-target="#myModal" onclick="openModelWindow(this)">修改</button>' +    
+                        '  <button class="waves-effect waves-light btn" onclick="deleteMemberGrade(this, ' + content.id + ')">删除</button>' + 
+                        '</td>' + 
                         '</tr>';
                 }
             });
@@ -148,7 +147,10 @@ function addMemberGrade() {
                 '<td>' + data.gradeName + '</td>' +
                 '<td>' + data.discount + '</td>' +
                 '<td>' + data.comment + '</td>' +
-                '<td><button class="waves-effect waves-light btn" onclick="openModelWindow(this)">修改</button></td>' +
+                '<td>' + 
+                '<button class="waves-effect waves-light btn" onclick="openModelWindow(this)">修改</button>' +
+                '  <button class="waves-effect waves-light btn" onclick="deleteMemberGrade(this, ' + data.id + ')">删除</button>' + 
+                '</td>' + 
                 '</tr>';
             tableContent.html(tableContent.html() + addHTML);
         }
