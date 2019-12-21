@@ -48,4 +48,8 @@ public class MemberGradeService {
     public MemberGrade add(MemberGrade memberGrade){
         return memberGradeDao.save(memberGrade);
     }
+
+    public void delete(Integer id){
+        memberGradeDao.deleteById(id);
+    }
 }

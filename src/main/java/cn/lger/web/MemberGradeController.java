@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 /**
- * Code that Changed the World
- * Pro said
- * Created by Pro on 2017-12-16.
+ * Code that Changed the World Pro said Created by Pro on 2017-12-16.
  */
 @Controller
 public class MemberGradeController {
@@ -22,22 +20,22 @@ public class MemberGradeController {
     private MemberGradeService memberGradeService;
 
     @GetMapping("/memberGrade")
-    public String getMemberGradeView(){
+    public String getMemberGradeView() {
         return "memberGrade";
     }
 
     @PostMapping("/memberGrade")
     @ResponseBody
-    public Page<MemberGrade> memberGrade(Integer currentPage){
+    public Page<MemberGrade> memberGrade(Integer currentPage) {
         return memberGradeService.findAll(currentPage);
     }
 
     @PostMapping("/updateMemberGrade")
     @ResponseBody
-    public String updateMemberGrade(MemberGrade memberGrade){
-        try{
+    public String updateMemberGrade(MemberGrade memberGrade) {
+        try {
             memberGradeService.updateMemberGrade(memberGrade);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
@@ -46,8 +44,19 @@ public class MemberGradeController {
 
     @PostMapping("/addMemberGrade")
     @ResponseBody
-    public MemberGrade addMemberGrade(MemberGrade memberGrade){
+    public MemberGrade addMemberGrade(MemberGrade memberGrade) {
         return memberGradeService.add(memberGrade);
     }
 
+    @PostMapping("/deleteMemberGrade")
+    @ResponseBody
+    public String deleteMemberGrade(Integer id) {
+        try {
+            memberGradeService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+        return "success";
+    }
 }
