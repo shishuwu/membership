@@ -1,6 +1,16 @@
 # 简易应用——Spring Boot会员管理系统
 
 ## Tips
+- 2019122
+  - 设置 maven，需要在setting里指定
+  
+        ```
+        {
+            "maven.executable.path": "C:\\apache-maven-3.3.9-bin\\apache-maven-3.3.9\\bin\\mvn.cmd",
+            "java.configuration.maven.userSettings": "C:\\apache-maven-3.3.9-bin\\apache-maven-3.3.9\\conf\\settings.xml"
+        }
+        ```
+
 - 当前项目的Java版本是1.8
     - 如Intellij，需在 Project里 设为1.8（如果不是的话）
     - 如VSCode，需在Workspace的settings.json指定jvm路径
