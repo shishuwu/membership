@@ -7,7 +7,7 @@ function isEmptyOrSpaces(str){
 function updateData(pageNum) {
     var memberName = document.getElementById('search').value;
     // if search content is empty, query all
-    if(isEmptyOrSpaces(memberName)){
+    if(isEmptyOrSpaces(memberName) || totalPages === 0){
         //continue to query;
     } else {
         if (pageNum < 1 || pageNum > totalPages)
