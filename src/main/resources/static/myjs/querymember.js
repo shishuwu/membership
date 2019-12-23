@@ -45,8 +45,9 @@ function updateData(pageNum) {
                         '<td>' + content.balance + '</td>' +
                         '<td>' + content.memberGrade.gradeName + '</td>' +
                         '<td>' + content.sex + '</td>' +
-                        '<td>' + content.state + '</td>'
-                        + '</tr>';
+                        '<td>' + content.state + '</td>' +
+                        '<td> <button class="waves-effect waves-light btn" data-toggle="modal" data-target="#myModal" onclick="openModelWindow(this)">修改</button> </td>' +    
+                        '</tr>';
                 }
             });
 
