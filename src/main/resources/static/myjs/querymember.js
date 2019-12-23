@@ -1,9 +1,21 @@
 var totalPages = 1;
 
+function isEmptyOrSpaces(str){
+    return str === null || str.match(/^ *$/) !== null;
+}
+
 function updateData(pageNum) {
-    if (pageNum < 1 || pageNum > totalPages)
-        return;
     var memberName = document.getElementById('search').value;
+    // if search content is empty, query all
+    if(isEmptyOrSpaces(memberName)){
+        //continue to query;
+    } else {
+        if (pageNum < 1 || pageNum > totalPages)
+        return;
+    }
+
+    
+    
     $.ajax({
         url: '/queryMember',
         dataType: 'JSON',
